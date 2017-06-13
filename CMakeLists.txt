@@ -66,13 +66,10 @@ if(WIN32)
   set_target_properties(hdhomerun PROPERTIES DEFINE_SYMBOL "LIBHDHOMERUN_DLLEXPORT") 
 endif()
 
-add_executable(hdhomerun_config hdhomerun_config.c)
-target_link_libraries(hdhomerun_config hdhomerun)
-
 include_directories(${PROJECT_SOURCE_DIR})
 
 install(FILES ${HEADERS} DESTINATION include/hdhomerun)
-install(TARGETS hdhomerun hdhomerun_static hdhomerun_config
+install(TARGETS hdhomerun hdhomerun_static
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
